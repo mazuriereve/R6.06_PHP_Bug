@@ -5,6 +5,7 @@ include 'config.php';
 <html>
 <head>
     <title>Accueil</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
     <h1>Bienvenue sur notre site</h1>
