@@ -10,10 +10,10 @@ include 'config.php';
 <body>
     <h1>Bienvenue sur notre site</h1>
     <?php if (is_logged_in()): ?>
-        <p>Vous êtes connecté en tant que <?= htmlspecialchars($_SESSION['username']) ?>.</p>
-        <a href="logout.php">Se déconnecter</a>
+        <p>ㅤㅤㅤVous êtes connecté en tant que <?= htmlspecialchars($_SESSION['username']) ?>.</p>
+        <a href="logout.php" class="connexion">ㅤㅤㅤSe déconnecter</a>
     <?php else: ?>
-        <a href="login.php">Se connecter</a>
+        <a href="login.php" class="connexion">ㅤㅤㅤSe connecter</a>
     <?php endif; ?>
 </body>
 </html>
