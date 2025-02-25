@@ -1,3 +1,4 @@
+-- Créer la base de données si elle n'existe pas déjà
 CREATE DATABASE IF NOT EXISTS project_Jules_Clement;
 USE project_Jules_Clement;
 
