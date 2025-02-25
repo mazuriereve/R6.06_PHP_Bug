@@ -2,7 +2,7 @@
 session_start();
 
 $host = 'localhost'; 
-$dbname = 'project_Jules_Clement';
+$dbname = 'project_jules_clement';
 $username = 'root'; 
 $password = 'root'; 
 
