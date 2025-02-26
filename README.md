@@ -25,13 +25,17 @@ Ce projet est un mini-site web en PHP avec une fonctionnalité de connexion et d
 - Une fois connecté, vous serez redirigé vers la page d'accueil avec un message de bienvenue.
 - Cliquez sur "Se déconnecter" pour vous déconnecter.
 
-## Problèmes de sécurité
+## Problèmes de sécurité (corrigés)
 ### Injection SQL
-Le projet contient une faille de sécurité majeure : l'injection SQL. Dans `login.php`, les informations d'identification des utilisateurs sont directement insérées dans la requête SQL sans être correctement échappées ou préparées. Cela permet à un attaquant d'injecter du code SQL malveillant.
+Le projet contenait une faille de sécurité majeure : l'injection SQL. Dans `login.php`, les informations d'identification des utilisateurs sont directement insérées dans la requête SQL sans être correctement échappées ou préparées. Cela permet à un attaquant d'injecter du code SQL malveillant.Cependant il reste toujours un problème , en effet il n'y a pas de hachage de mot de passe , car les logins par défaut sont fournis dans le 'database.sql' donc pour résoudre ce problème il faut faire un formulaire d'inscription avec un hachage de mot de passe.
 
 
 ### Gestion de la session
-Le script `logout.php` ne détruit pas complètement la session. Il utilise `unset($_SESSION['user_id']);` pour supprimer uniquement l'ID de l'utilisateur, mais les autres variables de session restent intactes. Cela peut entraîner des problèmes de sécurité si d'autres informations sensibles sont stockées dans la session.
+Le script `logout.php` ne  détruisait pas complètement la session. Il utilisait `unset($_SESSION['user_id']);` pour supprimer uniquement l'ID de l'utilisateur, mais les autres variables de session restent intactes. Cela peut entraîner des problèmes de sécurité si d'autres informations sensibles sont stockées dans la session. POur résoudre le problème nous avons rajouter un session_destroy et une vérification et suppresion des cookies , pour retirer la session proprement de l'utilisateur.
 
 ## Conclusion
-Ce projet est un bon point de départ pour comprendre les bases de la création d'un site web en PHP avec une base de données MySQL. Cependant, il est important de corriger les failles de sécurité mentionnées ci-dessus pour garantir la sécurité de l'application.
+Corriger les bugs de ce projet était très intuitif et la documentation et les commentaires aident à la compréhension du code et nous fais gagner du temps sur la résolution de bugs.
+
+## Bonus 
+Nous avons rajouter une page d'inscription pour permettre de sécuriser le mot de passe et avoir son propre compte 
+Nous allons refaire la refonte visuelle de la page d'accueil
