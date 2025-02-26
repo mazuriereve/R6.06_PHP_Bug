@@ -36,6 +36,4 @@ Le script `logout.php` ne  détruisait pas complètement la session. Il utilisai
 ## Conclusion
 Corriger les bugs de ce projet était très intuitif et la documentation et les commentaires aident à la compréhension du code et nous fais gagner du temps sur la résolution de bugs.
 
-## Bonus 
-Nous avons rajouter une page d'inscription pour permettre de sécuriser le mot de passe et avoir son propre compte 
-Nous allons refaire la refonte visuelle de la page d'accueil
+
