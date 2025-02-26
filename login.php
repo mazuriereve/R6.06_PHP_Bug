@@ -9,10 +9,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'];
 
     // Exécuter une requête SQL pour récupérer l'utilisateur avec le nom d'utilisateur donné
-    $stmt = $pdo->query("SELECT * FROM users WHERE username = '$username'");
+    $stmt = $pdo->prepare("SELECT * FROM users WHERE username = :username AND password = :password");
+    $stmt->execute(['username' => $username,'password' => $password]);    
     $user = $stmt->fetch();
 
-    if ($user && $password === $user['password_hash']) {
+    if ($user && $password) {
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['username'] = $user['username'];
         
